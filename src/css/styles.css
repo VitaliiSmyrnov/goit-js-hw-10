@@ -15,8 +15,11 @@ body {
 ul,
 li {
   padding: 0;
-  margin: 0;
   list-style: none;
+}
+
+li {
+  margin-bottom: 10px;
 }
 
 #search-box {
@@ -24,4 +27,14 @@ li {
   padding: 8px;
   max-width: 320px;
   margin-bottom: 16px;
+}
+
+.first-line {
+  display: flex;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.first-line img {
+  margin-right: 10px;
 }

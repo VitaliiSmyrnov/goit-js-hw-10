@@ -1,9 +1,11 @@
 {{#each this}}
-<ul>
-<img width="30" src="{{this.flags.svg}}" alt="flag">
+<div class="first-line">
+<img width="40" src="{{this.flags.svg}}" alt="flag">
 <span>{{this.name.official}}</span>
+</div>
+<ul></ul>
 <li><b>Capital: </b>{{this.capital}}</li>
 <li><b>Population: </b>{{this.population}}</li>
-<li><b>Languages: </b>{{[...(Object.values(this.languages))]}}</li>
+<li><b>Languages: </b>{{#each languages}} {{this}}{{/each}}</li>
 </ul>
 {{/each}}

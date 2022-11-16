@@ -31,6 +31,10 @@ function onSuccessSearch(value){
       countryListContainerRef.innerHTML = markup;
    }
    if (value.length === 1) {
+      console.log(value);
+      console.log(Object.values(value[0].languages));
+      const langList = Object.values(value[0].languages).join(',');
+      console.log(langList);
       countryListContainerRef.innerHTML = '';
       const markup = countryInfo(value);
       countryInfoContainerRef.innerHTML = markup;
