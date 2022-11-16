@@ -11,7 +11,6 @@ const inputRef = document.querySelector('#search-box');
 const countryListContainerRef = document.querySelector('.country-list');
 const countryInfoContainerRef = document.querySelector('.country-info');
 
-
 function onInputSearch(e) {
    const inputVal = e.target.value.trim();
    if (!inputVal) {
@@ -30,10 +29,9 @@ function onSuccessSearch(value){
       countryListContainerRef.innerHTML = markup;
    }
    if (value.length === 1) {
-      console.log(value);
-      console.log(Object.values(value[0].languages));
-      const langList = Object.values(value[0].languages).join(',');
-      console.log(langList);
+      const normalizedLanguages = Object.values(value[0].languages).join(', ');
+      value[0].languages = normalizedLanguages;
+      
       countryListContainerRef.innerHTML = '';
       const markup = countryInfo(value);
       countryInfoContainerRef.innerHTML = markup;

@@ -9,9 +9,3 @@ export function fetchCountries(name) {
       }
     });
 }
-// ?fields=name.official,capital,population,flags.svg,languages
-// name.official - повна назва країни
-// capital - столиця
-// population - населення
-// flags.svg - посилання на зображення прапора
-// languages - масив мов
