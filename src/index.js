@@ -23,7 +23,6 @@ function onInputSearch(e) {
 
 function onSuccessSearch(value){
    
-   if (value.status === 404) Notify.failure("Oops, there is no country with that name");
    if (value.length > 10) Notify.info("Too many matches found. Please enter a more specific name.");
    if (value.length >= 2 && value.length <= 10){
       countryInfoContainerRef.innerHTML = '';
@@ -42,6 +41,7 @@ function onSuccessSearch(value){
    }
    
    function onInputError(error) {
+      Notify.failure("Oops, there is no country with that name");
       console.log(error);
    }
 

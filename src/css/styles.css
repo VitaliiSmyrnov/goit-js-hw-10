@@ -38,3 +38,11 @@ li {
 .first-line img {
   margin-right: 10px;
 }
+
+.country-list li {
+  display: flex;
+}
+
+.country-item > img {
+  margin-right: 10px;
+}
