@@ -1,3 +1,6 @@
 {{#each this}}
-<li>{{this.population}} {{this.capital}}</li>
+<li>
+   <img width="30" src="{{this.flags.svg}}" alt="flag">
+   <span>{{this.name.official}}</span>
+</li>
 {{/each}}

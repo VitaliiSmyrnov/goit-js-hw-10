@@ -14,8 +14,13 @@ const countryInfoContainerRef = document.querySelector('.country-info');
 
 function onInputSearch(e) {
    const inputVal = e.target.value.trim();
-     fetchCountries(inputVal).then(onSuccessSearch).catch(onInputError);
+   if (!inputVal) {
+      countryListContainerRef.innerHTML = '';
+      countryInfoContainerRef.innerHTML = '';
+   }
+   fetchCountries(inputVal).then(onSuccessSearch).catch(onInputError);
 }
+
 function onSuccessSearch(value){
    
    if (value.status === 404) Notify.failure("Oops, there is no country with that name");
@@ -23,19 +28,13 @@ function onSuccessSearch(value){
    if (value.length >= 2 && value.length <= 10){
       countryInfoContainerRef.innerHTML = '';
       const markup = countryList(value);
-      // console.log(markup);
-      // console.log(value);
-      // const markup = value.map(value => {
-      //    return `<li>${value.population}</li>`
-      // })
       countryListContainerRef.innerHTML = markup;
    }
-   const markup = countryInfo(value);
-   countryInfoContainerRef.innerHTML = markup;
-
-      console.log(value);
-     
-      
+   if (value.length === 1) {
+      countryListContainerRef.innerHTML = '';
+      const markup = countryInfo(value);
+      countryInfoContainerRef.innerHTML = markup;
+   }
    }
    
    function onInputError(error) {

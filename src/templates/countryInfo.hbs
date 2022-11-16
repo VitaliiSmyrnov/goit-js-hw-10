@@ -1,7 +1,9 @@
-<ul>
 {{#each this}}
+<ul>
+<img width="30" src="{{this.flags.svg}}" alt="flag">
+<span>{{this.name.official}}</span>
 <li><b>Capital: </b>{{this.capital}}</li>
 <li><b>Population: </b>{{this.population}}</li>
 <li><b>Languages: </b>{{[...(Object.values(this.languages))]}}</li>
-{{/each}}
 </ul>
+{{/each}}
