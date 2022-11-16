@@ -2,5 +2,6 @@
 {{#each this}}
 <li><b>Capital: </b>{{this.capital}}</li>
 <li><b>Population: </b>{{this.population}}</li>
+<li><b>Languages: </b>{{[...(Object.values(this.languages))]}}</li>
 {{/each}}
 </ul>
